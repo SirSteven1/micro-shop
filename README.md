@@ -44,3 +44,28 @@ Building the go-zero project requires the use of some tools and commands. Here w
 * [protoc](https://grpc.io/docs/protoc-installation/) & [protoc-gen-go](https://grpc.io/docs/languages/go/quickstart/) (for installation methods, please see go-zero official documentation)
 
 >   protoc is a tool written in C++ that can translate proto files into code in a specified language. In go-zero's microservices, we use grpc for communication between services, and writing grpc requires the use of protoc and the plug-in protoc-gen-go that is translated into go language rpc stub code.
+
+
+### service division
+In actual project development, we usually adopt two microservice division strategies:
+
+* The first type: dividing boundaries by business functions
+
+* The second type: Boundary demarcation through DDD bounded context
+
+As can be seen from the above mind map, we divide microservices into the following based on business functions:
+
+* Product service (product) - product addition, information query, inventory management and other functions
+* Shopping cart service (cart) - Shopping cart functions such as adding, deleting, modifying, checking, and collecting
+* Order service (order) - Order generation, order management and other functions
+* Payment service (pay) - realize payment and other functions by calling third-party payment
+* Account service (user) - user information, real-name authentication, account settings, address management and other functions
+* Home page service (home) - home page product recommendations, rankings, limited time grabs, banners and other functions
+
+Each service can be subdivided into api services and rpc services.
+
+The api service is external and can be called by the app.
+
+The rpc service is internal and can be provided to internal api services or other rpc service calls.
+
+The service dependency flow chart of the entire project is roughly as follows:
