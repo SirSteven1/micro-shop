@@ -39,12 +39,8 @@ Building the go-zero project requires the use of some tools and commands. Here w
 
 * Goctl tool (see go-zero official documentation for installation instructions)
 
-```
-   goctl is a code generation tool under the go-zero microservice framework. Using goctl can significantly improve development efficiency and allow developers to focus their time on business development. Its functions include: api service generation, rpc service generation, model code generation, template management, etc.
-```
+>   goctl is a code generation tool under the go-zero microservice framework. Using goctl can significantly improve development efficiency and allow developers to focus their time on business development. Its functions include: api service generation, rpc service generation, model code generation, template management, etc.
 
 * [protoc](https://grpc.io/docs/protoc-installation/) & [protoc-gen-go](https://grpc.io/docs/languages/go/quickstart/) (for installation methods, please see go-zero official documentation)
 
-```
-   protoc is a tool written in C++ that can translate proto files into code in a specified language. In go-zero's microservices, we use grpc for communication between services, and writing grpc requires the use of protoc and the plug-in protoc-gen-go that is translated into go language rpc stub code.
-```
+>   protoc is a tool written in C++ that can translate proto files into code in a specified language. In go-zero's microservices, we use grpc for communication between services, and writing grpc requires the use of protoc and the plug-in protoc-gen-go that is translated into go language rpc stub code.
