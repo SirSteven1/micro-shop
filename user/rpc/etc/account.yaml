@@ -1,0 +1,23 @@
+Name: account.rpc
+ListenOn: 0.0.0.0:8989
+SecretKey: C8xHnG6s
+
+JwtAuth:
+  AccessSecret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  AccessExpire: 604800
+
+Etcd:
+  Hosts:
+  - 127.0.0.1:2379
+  Key: account.rpc
+
+# mysql配置
+Mysql:
+  Host: 127.0.0.1:3306
+  User: root
+  Pass: !!str 123456
+  Data: shop
+  Charset: utf8mb4
+
+Cache:
+  - Host: localhost:6379
